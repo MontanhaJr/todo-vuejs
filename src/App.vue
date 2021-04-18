@@ -8,22 +8,7 @@
           <button class="btn btn-primary input-group-btn">Adicionar</button>
         </div>
         <div class="todo-list">
-          <div class="tile" v-for="t in todos" :key="t.id">
-            <div class="tile-icon">
-              <div>
-                <i class="icon icon-time flex-centered"></i>
-              </div>
-            </div>
-            <div class="tile-content">
-              <div class="tile-subtitle">{{ t.description }}</div>
-            </div>
-            <div class="tile-action">
-              <button class="btn btn-link">Concluído</button>
-              <button class="btn btn-link">
-                <span class="text-error">Remover</span>
-              </button>
-            </div>
-          </div>
+          <todo v-for="t in todos" :key="t.id" :todo="t"/>
         </div>
       </form>
     </div>
@@ -31,9 +16,10 @@
 </template>
 
 <script>
-
+import Todo from './components/Todo';
 export default {
   name: 'App',
+  components: { Todo },
   data() {
     return { todos: [], todo: { checked: false}};
   },
