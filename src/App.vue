@@ -1,5 +1,9 @@
 <template>
-  <div id="app">Hello World</div>
+  <div class="" id="app">
+    <div class="container grid-xs py-2">
+      Hello World!
+    </div>
+  </div>
 </template>
 
 <script>
