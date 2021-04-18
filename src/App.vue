@@ -7,7 +7,24 @@
           <input type="text" v-model="todo.description" class="form-input" placeholder="Novo TODO">
           <button class="btn btn-primary input-group-btn">Adicionar</button>
         </div>
-        {{ todos }}
+        <div class="todo-list">
+          <div class="tile" v-for="t in todos" :key="t.id">
+            <div class="tile-icon">
+              <div>
+                <i class="icon icon-time flex-centered"></i>
+              </div>
+            </div>
+            <div class="tile-content">
+              <div class="tile-subtitle">{{ t.description }}</div>
+            </div>
+            <div class="tile-action">
+              <button class="btn btn-link">Concluído</button>
+              <button class="btn btn-link">
+                <span class="text-error">Remover</span>
+              </button>
+            </div>
+          </div>
+        </div>
       </form>
     </div>
   </div>
@@ -34,6 +51,10 @@ export default {
   .img-logo {
     max-width: 200px;
     margin: 0 auto;
+  }
+
+  .todo-list {
+    padding-top: 2rem;
   }
 
 </style>
